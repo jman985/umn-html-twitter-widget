@@ -8,7 +8,7 @@
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- <script src="vendors/jquery.min.js"></script> -->
     <!-- <script src="scripts/client.js"></script> -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/stylesW.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
             let url= 'http://localhost:3000/#/books/'
 
               //get tweet ids from database
-                    fetch('/api/tweets/1', //using /:publication_id
+                    fetch('/api/tweets/2', //using /:publication_id
                     { method: 'GET',
                       mode: 'no-cors',
                                       }
@@ -38,7 +38,7 @@
                           console.log('tweet id', data[i].tweet_id);
 
                           
-                            fetch('/api/tweets/1/' + data[i].tweet_id,   //using /:publication_id/:tweet_id
+                            fetch('/api/tweets/2/' + data[i].tweet_id,   //using /:publication_id/:tweet_id
                             { method: 'GET',
                             mode: 'no-cors',
                                             }
