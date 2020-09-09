@@ -3,70 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-    <title>UMN Twitter Widget</title>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <!-- <script src="vendors/jquery.min.js"></script> -->
-    <!-- <script src="scripts/client.js"></script> -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
 </head>
-<body>
-   
-    <h1>UMN Twitter Widget</h1>
-          
-          <div id='viewTweets'>
-          </div>
-
-      <script type='text/javascript'>
-        //to load widget, type "npm start" in terminal, the navigate to http://localhost:5000/
-
-        //!!need to pull out url into variable to be easily swapped out
-        //need unique identifier to link to individual book
-            let url= 'http://localhost:3000/#/books/'
-
-              //get tweet ids from database
-                    fetch('/api/tweets/1', //using publication_id
-                    { method: 'GET',
-                      mode: 'no-cors',
-                                      }
-                    ).then( response => response.json() //turn promise response into json data
-                    
-                    ).then(data=> {
-                        console.log('tweet ids:',data);
-                        
-                        //use response tweetID data to get embeded tweet data
-                        for(let i=0;i<data.length;i++){
-                          console.log('tweet id', data[i].tweet_id);
-
-                          
-                            fetch('/api/tweets/1/' + data[i].tweet_id,
-                            { method: 'GET',
-                            mode: 'no-cors',
-                                            }
-
-                            ).then(response=> response.text() //turn promise response data into html text
-                            
-                            ).then(html => {console.log('this is the tweet embed html', html)
-                                            
-                              let tweetContainer = document.getElementById('viewTweets');//select element to embed tweets
-                              console.log(tweetContainer);
-
-                              let tweetDiv = document.createElement('div'); //create element for each tweet
-                              console.log(html);
-
-                              tweetDiv.innerHTML = html;  //insert html data into tweet element
-                             
-                              tweetContainer.append(tweetDiv); //append tweet html to the DOM
-                              twttr.widgets.load(document.getElementById("viewTweets"));  //use twttr function to check for and load twitter widget elements
-                      })
-                    }}
-
-                    ).catch((error) => {console.error('Error fetching embed html', error);}
-
-              ).catch( error => console.error('Error fetching tweet ID', error) )
-            
-          </script>
+    <body>
+        <h1>UMN Twitter Widget</h1>
 
 
-  </body>
+    <iframe src="/indexW.html" title="widget" height="550px" width="258px" style="border:1px solid black;" ></iframe>
+
+
+
+
+
+
+    </body>
 </html>

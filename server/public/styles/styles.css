@@ -1,7 +1,4 @@
-#displayResult{
-background-color: chartreuse;
-margin-left: 50px;
-}
+
 
 #viewTweets, .twitter-tweet-rendered .twitter-tweet{
 max-width: 100px !important;
