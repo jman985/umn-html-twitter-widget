@@ -16,55 +16,58 @@
           </div>
 
 
-      <script type='text/javascript'>
-        //to load widget, type "npm start" in terminal, the navigate to http://localhost:5000/
+          <script type="text/javascript">
+            //to load widget, type "npm start" in terminal, the navigate to http://localhost:5000/
 
-        //!!need to pull out url into variable to be easily swapped out
-        //need unique identifier to link to individual book
-            let url= 'http://localhost:3000/#/books/'
-
-              //get tweet ids from database
-                    fetch('/api/tweets2/', //using /:title
-                    { method: 'GET',
-                      mode: 'no-cors',
-                                      }
-                    ).then( response => response.json() //turn promise response into JSON data
-                    
-                    ).then(data=> {
-                        console.log('tweet ids:',data);
+            //!!need to pull out url into variable to be easily swapped out
+            //need unique identifier to link to individual book
+                let url= 'http://localhost:3000/#/books/'
+                // const title = document.getElementsByTagName("TITLE")[0];
+                const title= document.title.replace(' — University of Minnesota Press','').split(':')[0]
+                console.log('this is the book title', title);
+                
+                  //get tweet ids from database
+                        fetch('/api/tweets2/'+ title, //using /:publication_id
+                        { method: 'GET',
+                          mode: 'no-cors',
+                                          }
+                        ).then( response => response.json() //turn promise response into JSON data
                         
-                        //use response tweetID data to get embeded tweet data
-                        for(let i=0;i<data.length;i++){
-                          console.log('tweet id', data[i].tweet_id);
-
-                          
-                            fetch('/api/tweets2/' + data[i].tweet_id,   //using /:publication_id/:tweet_id
-                            { method: 'GET',
-                            mode: 'no-cors',
-                                            }
-
-                            ).then(response=> response.text() //turn promise response data into html text
+                        ).then(data=> {
+                            console.log('tweet ids:',data);
                             
-                            ).then(html => {console.log('this is the tweet embed html', html)
-                                            
-                              let tweetContainer = document.getElementById('viewTweets');//select element to embed tweets
-                              console.log(tweetContainer);
+                            //use response tweetID data to get embeded tweet data
+                            for(let i=0;i<data.length;i++){
+                              console.log('tweet id', data[i].tweet_id);
 
-                              let tweetDiv = document.createElement('div'); //create element for each tweet
-                              console.log(html);
+                              
+                                fetch('/api/tweets2/:title/' + data[i].tweet_id,   //using /:publication_id/:tweet_id
+                                { method: 'GET',
+                                mode: 'no-cors',
+                                                }
 
-                              tweetDiv.innerHTML = html;  //insert html data into tweet element
-                             
-                              tweetContainer.append(tweetDiv); //append tweet html to the DOM
-                              twttr.widgets.load(document.getElementById("viewTweets"));  //use twttr function to check and load twitter widget elements
-                      })
-                    }}
+                                ).then(response=> response.text() //turn promise response data into html text
+                                
+                                ).then(html => {console.log('this is the tweet embed html', html)
+                                                
+                                  let tweetContainer = document.getElementById('viewTweets');//select element to embed tweets
+                                  console.log(tweetContainer);
 
-                    ).catch((error) => {console.error('Error fetching embed html', error);}
+                                  let tweetDiv = document.createElement('div'); //create element for each tweet
+                                  console.log(html);
 
-              ).catch( error => console.error('Error fetching tweet ID', error) )
-            
-          </script>
+                                  tweetDiv.innerHTML = html;  //insert html data into tweet element
+                                
+                                  tweetContainer.append(tweetDiv); //append tweet html to the DOM
+                                  twttr.widgets.load(document.getElementById("viewTweets"));  //use twttr function to check and load twitter widget elements
+                          })
+                        }}
+
+                        ).catch((error) => {console.error('Error fetching embed html', error);}
+
+                  ).catch( error => console.error('Error fetching tweet ID', error) )
+                
+              </script>
 
 
   </body>
