@@ -4,7 +4,7 @@ const router = express.Router();
 const {default: axios} = require('axios');
 
 /**
- * GET route to db for tweet ids
+ * GET route to db for tweet ids using publication id
  */
 router.get( '/:publication_id', ( req, res )=>{
     console.log( 'in router /api/tweets GET', req.params );

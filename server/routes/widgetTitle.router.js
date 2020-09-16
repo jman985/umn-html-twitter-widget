@@ -4,7 +4,7 @@ const router = express.Router();
 const {default: axios} = require('axios');
 
 /**
- * GET route to db for tweet ids
+ * GET route to db for tweet ids using title tag in html page
  */
 router.get( '/:title', ( req, res )=>{
     console.log( 'this router /api/tweets2 GET', req.params.title);
