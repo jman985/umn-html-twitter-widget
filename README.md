@@ -14,7 +14,7 @@ This page contains the same JavaScript code found in *widget.js* but wrapped in 
 
 
 #### *index.html*
-This page is a simply a sample page used soley by the Design Team to test their Twitter Tweet embed script using a mock-up of an individual book page from the UMN Press website.
+This page is simply a sample page used soley by the Design Team to test their Twitter Tweet embed script using a mock-up of an individual book page from the UMN Press website.
 
 
 ## Server
