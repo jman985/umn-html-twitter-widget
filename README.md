@@ -18,6 +18,6 @@ The server is configured using Node.js and Express server to connect the databas
 
 
 # DATABASE
-If deploying the U of MN Press Twitter Search App to Heroku, the widget can be configured to connect to the application database on Heroku.  Simply include DATBASE_URL=(*Heroku DATABASE_URL*) in a .env file, replacing "Heroku DATABASE_URL" with the DATABASE_URL found in under "Config Vars" of the app on your online Heroku account.
+After deploying the U of MN Press Twitter Search Application to Heroku, this widget can be configured to connect to the application's database on Heroku.  Simply include DATBASE_URL=(*Heroku DATABASE_URL*) in a .env file, replacing "Heroku DATABASE_URL" with the DATABASE_URL found in the "Config Vars" of the app's page online on your Heroku account dashboard.
 
 If deploying the app locally, simply replace the database name in the *pool.js* file with the name of your local database.
