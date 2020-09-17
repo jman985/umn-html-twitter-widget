@@ -5,7 +5,7 @@ This repo contains the files that the University of Minnesota Press Twitter Widg
 
 ## Scripts
 #### *widget.js*
-This script contains the JavaScript code that could be wrapped in an HTML script tag and embedded on a book page on the U of MN Press' website.  It reads the title of the book, parses it, and queries the database for Tweet ID numbers corresponding to that particular book title.  The script then uses these Tweet IDs to retrieve the HTML code for each Tweet from the Twitter Embed API.  Finally, these Tweets are appended to the DOM.
+This script contains the JavaScript code that could be wrapped in an HTML script tag and embedded on a book page on the U of MN Press' website.  It reads the title of the book, parses it, and queries the database for Tweet ID numbers corresponding to that particular book title.  The script then uses these Tweet IDs to retrieve the HTML code for each Tweet using the Twitter Embed API.  Finally, these Tweets are appended to the DOM.
 
 
 ## HTML Pages
