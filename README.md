@@ -1,6 +1,6 @@
 # UMN Press HTML Twitter Widget
 
-## INTRODUCTION
+## Introduction
 This repo contains the files that the University of Minnesota Press Twitter Widget Design Team at Prime Academy used to test their Twitter Search Application outside of React.js, in an environment that most closely mirrors that in which the U of MN Press will likely deploy the widget on their website.  These files were used to simulate how the Twitter Search Application could connect to an external website.
 
 ## Scripts
@@ -9,7 +9,8 @@ This repo contains the files that the University of Minnesota Press Twitter Widg
 
 ## HTML Pages
 #### *widget.html*
-this page contains the same JavaScript code found in *widget.js* but wrapped in an HTML script tag.  It also contains Twitter's embed script sourced from https://platform.twitter.com/widgets.js . *This script is needed for any embedded Twitter content to display correctly on the webpage*.  This document also contains the corresponding *<div>* tag with id=#viewTweets, which should be placed on the HTML page anywhere the U of MN Press desires the embedded Tweets to display.  
+This page contains the same JavaScript code found in *widget.js* but wrapped in an HTML script tag.  It also contains Twitter's embed script sourced from https://platform.twitter.com/widgets.js . *This script is needed for any embedded Twitter content to display correctly on the webpage*.  This document also contains the corresponding *<div>* tag with id=#viewTweets, which should be placed on the HTML page anywhere the U of MN Press desires the embedded Tweets to display.  
+
 
 #### *index.html*
 This page is a simply a sample page used soley by the Design Team to test their Twitter Tweet embed script using a mock-up of an individual book page from the UMN Press website.
