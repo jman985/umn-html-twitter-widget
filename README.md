@@ -13,11 +13,11 @@ This repo includes the files that the Prime Academy University of Minnesota Pres
 *index.html* - this page is a simply a sample page used soley by the Design Team to test their Twitter Tweet embed script using a mock-up of an individual book page from the UMN Press website.
 
 
-# SERVER
-The server is configured using Node.js and Express server to connect the database.  These files will likely need to be re-configured to match the parameters of the U of MN Press' local servers.  If the U of MN servers are configured using a different programming language (ex. Ruby, Python), these files would have to be re-written entirely.
+## SERVER
+The server is configured using Node.js, Express server, and pg (a PostgreSQL client for Node.js) to connect to a PostgresSQL database.  These files will likely need to be re-configured to match the parameters of the U of MN Press' local servers.  If the U of MN servers are configured using a different programming language (ex. Ruby, Python), these files would have to be re-written entirely.
 
 
-# DATABASE
+## DATABASE
 After deploying the U of MN Press Twitter Search Application to Heroku, this widget can be configured to connect to the application's database on Heroku.  Simply include DATBASE_URL=(*Heroku DATABASE_URL*) in a .env file, replacing "Heroku DATABASE_URL" with the DATABASE_URL found in the "Config Vars" of the app's page online on your Heroku account dashboard.
 
 If deploying the app locally, simply replace the database name in the *pool.js* file with the name of your local database.
