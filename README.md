@@ -1,6 +1,6 @@
-# UMN PRESS HTML TWITTER WIDGET
+# UMN Press HTML Twitter Widget
 
-# INTRODUCTION
+## INTRODUCTION
 This repo includes the files that the Prime Academy University of Minnesota Press Twitter Widget Design Team used to test their Twitter Search Application outside of React.js.  The files in this repo should help the U of MN Press Twitter Search Application to be integrated into the UMN Press website. 
 
 ## SCRIPTS
