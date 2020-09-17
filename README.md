@@ -9,7 +9,7 @@ This repo contains the files that the University of Minnesota Press Twitter Widg
 
 ## HTML Pages
 #### *widget.html*
-This page contains the same JavaScript code found in *widget.js* but wrapped in an HTML script tag.  It also contains Twitter's embed script sourced from https://platform.twitter.com/widgets.js . *This script is needed for any embedded Twitter content to display correctly on the webpage*.  This document also contains the corresponding *<div>* tag with id=#viewTweets, which should be placed on the HTML page anywhere the U of MN Press desires the embedded Tweets to display.  
+This page contains the same JavaScript code found in *widget.js* but wrapped in an HTML script tag.  It also contains Twitter's embed script sourced from https://platform.twitter.com/widgets.js . *This script is needed for any embedded Twitter content to display correctly on the webpage*.  This document also contains the corresponding *div* tag with id = #viewTweets, which should be placed on the HTML page anywhere the U of MN Press desires the embedded Tweets to display.  
 
 
 #### *index.html*
