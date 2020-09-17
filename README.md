@@ -8,13 +8,13 @@ This repo includes the files that the Prime Academy University of Minnesota Pres
 
 
 ## HTML
-*widget.html*: this page contains the same JavaScript code found in *widget.js* but wrapped in an HTML script tag.  It also contains Twitter's embed script sourced from https://platform.twitter.com/widgets.js which is needed for any embedded Twitter content to display correctly on the page.  This document also contains the corresponding <div> tag with id=#viewTweets, which should be placed on the HTML page anywhere the U of MN Press desires the embedded Tweets to display.  
+*widget.html* - this page contains the same JavaScript code found in *widget.js* but wrapped in an HTML script tag.  It also contains Twitter's embed script sourced from https://platform.twitter.com/widgets.js which is needed for any embedded Twitter content to display correctly on the page.  This document also contains the corresponding <div> tag with id=#viewTweets, which should be placed on the HTML page anywhere the U of MN Press desires the embedded Tweets to display.  
 
-*index.html*: this page is a simply a sample page used soley by the Design Team to test their Twitter Tweet embed script using a mock-up of an individual book page from the UMN Press website.
+*index.html* - this page is a simply a sample page used soley by the Design Team to test their Twitter Tweet embed script using a mock-up of an individual book page from the UMN Press website.
 
 
 # SERVER
-The server is configured using Node.js and Express server to connect the database.  These files will likely need to be re-configured to match the parameters of the U of MN Press' local servers.  If these servers are configured using a different programming language (ex. Ruby, Python), these files would have to be re-written entirely.
+The server is configured using Node.js and Express server to connect the database.  These files will likely need to be re-configured to match the parameters of the U of MN Press' local servers.  If the U of MN servers are configured using a different programming language (ex. Ruby, Python), these files would have to be re-written entirely.
 
 
 # DATABASE
