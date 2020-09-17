@@ -1,14 +1,17 @@
 const express = require('express');
-const pool = require('../routes/pool');
+const pool = require('./pool');
 const router = express.Router();
 const {default: axios} = require('axios');
 
 /**
- * GET route to db for tweet ids using publication id
+ * GET route to db for tweet ids using title tag in html page
  */
-router.get( '/:publication_id', ( req, res )=>{
-    console.log( 'in router /api/tweets GET', req.params );
-    pool.query( `SELECT "tweet_id" FROM "tweet" WHERE "publication_id"=$1 AND "approved"=TRUE ORDER BY "tweet_id";`,[req.params.publication_id])
+router.get( '/:title', ( req, res )=>{
+    console.log( 'this router /api/tweets2 GET', req.params.title);
+    pool.query( `SELECT tweet.tweet_id FROM tweet 
+    JOIN publication ON publication.id = tweet.publication_id WHERE publication.title LIKE $1 
+    AND tweet.approved = TRUE ORDER BY tweet.id;`,['%'+ req.params.title + '%'])
+
     .then( ( result )=>{
         // success
         res.send( result.rows );
@@ -21,8 +24,8 @@ router.get( '/:publication_id', ( req, res )=>{
 
 // GET Tweet from Twitter Embed API
 
-router.get('/:publication_id/:tweet_id', (req, res) => {
-    console.log( 'in router /api/tweets GET embed html', req.params );
+router.get('/:title/:tweet_id', (req, res) => {
+    console.log( 'in router /api/tweets2 GET embed html', req.params );
     
     axios.get(`https://publish.twitter.com/oembed?url=https://twitter.com/anyuser/status/${req.params.tweet_id}&omit_script=true`)
 
@@ -37,11 +40,6 @@ router.get('/:publication_id/:tweet_id', (req, res) => {
 })
 
 
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
 
-});
 
 module.exports = router;

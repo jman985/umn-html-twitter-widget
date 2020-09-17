@@ -15,49 +15,49 @@
 
 
           <script type="text/javascript">
-            //to load widget, type "npm start" in terminal, the navigate to http://localhost:5000/
+                           
+                if(document.title.replace(' — University of Minnesota Press','').split(':')[0]==='Leonardo'){
+                    const title= document.title.replace(' — University of Minnesota Press','').replace(' ','').split(':')[1]
+                }
+                else{
+                  const title= document.title.replace(' — University of Minnesota Press','').split(':')[0]
+                }
 
-            //!!need to pull out url into variable to be easily swapped out
-            //need unique identifier to link to individual book
-                let url= 'http://localhost:3000/#/books/'
-                // const title = document.getElementsByTagName("TITLE")[0];
-                const title= document.title.replace(' — University of Minnesota Press','').split(':')[0]
                 console.log('this is the book title', title);
                 
-                  //get tweet ids from database
-                        fetch('/api/tweets2/'+ title, //using /:publication_id
+                        fetch('/api/tweets/'+ title, 
                         { method: 'GET',
                           mode: 'no-cors',
                                           }
-                        ).then( response => response.json() //turn promise response into JSON data
+                        ).then( response => response.json() 
                         
                         ).then(data=> {
                             console.log('tweet ids:',data);
                             
-                            //use response tweetID data to get embeded tweet data
+                            
                             for(let i=0;i<data.length;i++){
                               console.log('tweet id', data[i].tweet_id);
 
                               
-                                fetch('/api/tweets2/:title/' + data[i].tweet_id,   //using /:publication_id/:tweet_id
+                                fetch('/api/tweets/:title/' + data[i].tweet_id,
                                 { method: 'GET',
                                 mode: 'no-cors',
                                                 }
 
-                                ).then(response=> response.text() //turn promise response data into html text
+                                ).then(response=> response.text()
                                 
                                 ).then(html => {console.log('this is the tweet embed html', html)
                                                 
-                                  let tweetContainer = document.getElementById('viewTweets');//select element to embed tweets
+                                  let tweetContainer = document.getElementById('viewTweets');
                                   console.log(tweetContainer);
 
-                                  let tweetDiv = document.createElement('div'); //create element for each tweet
+                                  let tweetDiv = document.createElement('div');
                                   console.log(html);
 
-                                  tweetDiv.innerHTML = html;  //insert html data into tweet element
+                                  tweetDiv.innerHTML = html;
                                 
-                                  tweetContainer.append(tweetDiv); //append tweet html to the DOM
-                                  twttr.widgets.load(document.getElementById("viewTweets"));  //use twttr function to check and load twitter widget elements
+                                  tweetContainer.append(tweetDiv);
+                                  twttr.widgets.load(document.getElementById("viewTweets"));
                           })
                         }}
 

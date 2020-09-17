@@ -1856,3 +1856,7 @@ tr.selected {
     width: 650px !important;
 }
 }
+
+/* #viewTweets, .twitter-tweet-rendered .twitter-tweet{
+    max-width: 100px !important;
+    } */
